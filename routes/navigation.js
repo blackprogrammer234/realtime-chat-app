@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
+import * as React from 'react';
 import Login from "../screens/Login/LoginScreen.js";
-import Register from "../screens/Register/RegistrationScreen";
+import Register from "../screens/Register/RegistrationScreen.js";
 import { StyleSheet, Text, View } from 'react-native';
 
 const navigationStack = createStackNavigator();
@@ -11,15 +11,17 @@ const globalScreenOption = {
     headerStyle : {backgroundColor : "#2c6bed"},
     headerTitleStyle : {color : "white"},
     headerTintColor: "white",
+    headerTitleAlign: 'center'
 };
 
 function navigation() {
     return(
-        <NavigationContainer>
-        <navigationStack.Navigator screenOptions= {globalScreenOption}>
-            <navigationStack.Screen name= "Login" component= {Login}/>
-        </navigationStack.Navigator>
-        </NavigationContainer>
+            <NavigationContainer>
+                <navigationStack.Navigator screenOptions={globalScreenOption}>
+                    <navigationStack.Screen name="Login" component={Login} />
+                    <navigationStack.Screen name="Register" component={Register} />
+                </navigationStack.Navigator>
+            </NavigationContainer>
     );
 };
 

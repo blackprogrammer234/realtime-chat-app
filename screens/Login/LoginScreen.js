@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, KeyboardAvoidingView, Image} from 'react-native';
-import {Input , Button} from 'react-native-elements'
-import styles from "./LoginScreen_styles"
+import {Input , Button} from 'react-native-elements';
+import styles from "./LoginScreen_styles";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     return(
@@ -34,7 +34,7 @@ const LoginScreen = () => {
             }
           />
           <Button title="Login" />
-          <Button type="outline" title="Sign Up" />
+          <Button onPress = {() => navigation.navigate('Register')}  type="outline" title="Sign Up" />
         </View>
       </KeyboardAvoidingView>
     );
