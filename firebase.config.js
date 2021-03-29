@@ -22,6 +22,10 @@ const firebaseConfig = {
     app = firebase.app();
   }
 
+  const auth = firebase.auth();
+
+  export { auth };
+
   export async function registration(fullName, email, userName, password){
     try{
       await firebase.auth().createUserWithEmailAndPassword(email, password)

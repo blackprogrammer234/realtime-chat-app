@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import Login from "../screens/Login/LoginScreen.js";
 import Register from "../screens/Register/RegistrationScreen.js";
+import Home from "../screens/Home/HomeScreen.js"
 import { StyleSheet, Text, View } from 'react-native';
 
 const navigationStack = createStackNavigator();
@@ -20,6 +21,7 @@ function navigation() {
                 <navigationStack.Navigator screenOptions={globalScreenOption}>
                     <navigationStack.Screen name="Login" component={Login} />
                     <navigationStack.Screen name="Register" component={Register} />
+                    <navigationStack.Screen name="Home" component={Home}/>
                 </navigationStack.Navigator>
             </NavigationContainer>
     );

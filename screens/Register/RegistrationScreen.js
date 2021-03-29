@@ -3,7 +3,8 @@ import {View, Image, KeyboardAvoidingView} from 'react-native';
 import {Input , Button, Icon, Text} from 'react-native-elements';
 import navigation from '../../routes/navigation';
 import styles from "./RegistrationScreen_styles";
-import { registration } from "../../firebase.config"
+import { registration } from "../../firebase.config";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 const RegistrationScreen =  ({ navigation })  => {
@@ -20,7 +21,10 @@ const RegistrationScreen =  ({ navigation })  => {
 
 
     return(
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <KeyboardAwareScrollView style={{ backgroundColor: '#4c69a5' }}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+        contentContainerStyle={styles.container}
+        scrollEnabled={false}>
              <Text style= {{marginBottom: 50}} h3>Create account</Text>
             <View style={styles.inputContainer} >
                 <Input placeholder="Full Name"
@@ -81,7 +85,7 @@ const RegistrationScreen =  ({ navigation })  => {
                 />
                 <Button onPress= { () => {registration(fullName, email, userName, password)}}  title="Register" />
             </View>
-        </KeyboardAvoidingView>
+        </KeyboardAwareScrollView>
     )
 }
 
