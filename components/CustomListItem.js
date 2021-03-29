@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView } from "react-native"
 import { Text , ListItem , Avatar } from "react-native-elements";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import  { signout } from "../firebase.config";
 
 const CustomListItem = () => {
     return(
@@ -15,7 +16,7 @@ const CustomListItem = () => {
                      rounded
                      source= {require("../assets/images/avater_icon.png")}
                      icon={{name: 'user', type: 'font-awesome'}}
-                     onPress={() => console.log("Works!")}
+                     onPress={() => {signout("Login")}}
                      />
             <ListItem.Content>
                 <ListItem.Title style= {{fontWeight: "800"}}>

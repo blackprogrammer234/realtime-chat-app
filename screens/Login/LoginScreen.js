@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, KeyboardAvoidingView, Image} from 'react-native';
 import {Input , Button} from 'react-native-elements';
 import styles from "./LoginScreen_styles";
-import  { auth } from "../../firebase.config";
+import  { auth, authentication } from "../../firebase.config";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const LoginScreen = ({ navigation }) => {
@@ -49,7 +49,7 @@ const LoginScreen = ({ navigation }) => {
               (text) => setPassword(text)
             }
           />
-          <Button title="Login" />
+          <Button onPress = {() => {authentication(email,password)}} title="Login" />
           <Button onPress = {() => navigation.navigate('Register')}  type="outline" title="Sign Up" />
         </View>
       </KeyboardAwareScrollView>

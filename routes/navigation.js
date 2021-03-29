@@ -4,7 +4,9 @@ import * as React from 'react';
 import Login from "../screens/Login/LoginScreen.js";
 import Register from "../screens/Register/RegistrationScreen.js";
 import Home from "../screens/Home/HomeScreen.js"
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Icon, Button, Header} from "react-native-elements";
+
 
 const navigationStack = createStackNavigator();
 
