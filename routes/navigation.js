@@ -3,10 +3,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import Login from "../screens/Login/LoginScreen.js";
 import Register from "../screens/Register/RegistrationScreen.js";
-import Home from "../screens/Home/HomeScreen.js"
+import Home from "../screens/Home/HomeScreen.js";
+import AddChat from "../screens/AddChat/AddChatScreen.js"
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Icon, Button, Header} from "react-native-elements";
-
+import AddChatScreen from '../screens/AddChat/AddChatScreen.js';
 
 const navigationStack = createStackNavigator();
 
@@ -24,6 +25,7 @@ function navigation() {
                     <navigationStack.Screen name="Login" component={Login} />
                     <navigationStack.Screen name="Register" component={Register} />
                     <navigationStack.Screen name="Home" component={Home}/>
+                    <navigationStack.Screen name="AddChat" component={AddChatScreen}/>
                 </navigationStack.Navigator>
             </NavigationContainer>
     );
