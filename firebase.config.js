@@ -24,8 +24,9 @@ const firebaseConfig = {
   }
 
   const auth = firebase.auth();
+  const db = app.firestore()
 
-  export { auth };
+  export { auth, db};
 
   export async function registration(fullName, email, userName, password){
     try{
