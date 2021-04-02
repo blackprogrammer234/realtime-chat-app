@@ -4,13 +4,13 @@ import { Text , ListItem , Avatar } from "react-native-elements";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import  { signout } from "../firebase.config";
 
-const CustomListItem = () => {
+const CustomListItem = ({id, chatName, enterChat}) => {
     return(
         <SafeAreaView>
             <KeyboardAwareScrollView 
                 resetScrollToCoords={{ x: 0, y: 0 }}
                 scrollEnabled={false}>
-            <ListItem>
+            <ListItem key={id} bottomDivider>
                 <Avatar
                      size="small"
                      rounded
@@ -20,7 +20,7 @@ const CustomListItem = () => {
                      />
             <ListItem.Content>
                 <ListItem.Title style= {{fontWeight: "800"}}>
-                   Youtube Chat 
+                   {chatName} 
                 </ListItem.Title>
                 <ListItem.Subtitle numberOfLines = {1} ellipsizeMode= "tail">
                     This is to test the Subtitle. This is to test the subtile. 

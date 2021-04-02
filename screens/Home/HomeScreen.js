@@ -1,14 +1,27 @@
-import React, { useEffect , useLayoutEffect } from 'react';
+import React, { useEffect , useLayoutEffect, useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity} from "react-native"
 import { Text , ListItem , Avatar } from "react-native-elements";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import CustomListItem from "../../components/CustomListItem.js";
-import  { signout } from "../../firebase.config";
+import  { db, signout } from "../../firebase.config";
 import { AntDesign, SimpleLineIcons} from "@expo/vector-icons"
 import { HeaderTitle } from '@react-navigation/stack';
 import { Icon , Button } from "react-native-elements";
+import Styles from "./HomeScreen_styles.js"
 
 const HomeScreen = ({navigation}) => {
+    const [chats, setChats] = useState([]);
+
+    useEffect(() => {
+        const unsubscribe = db.collection("chat").onSnapshot(snapshot => (
+            setChats(snapshot.docs.map(doc => ({
+                id: doc.id,
+                data: doc.data()
+            })))
+        ));
+        return unsubscribe;
+    },[])
+    
     useLayoutEffect(()=>{
         navigation.setOptions({
             title: "Realtime-chat-app",
@@ -34,7 +47,11 @@ const HomeScreen = ({navigation}) => {
         })
     });
     return(
-     <CustomListItem/>
+     <SafeAreaView style= {Styles.container}> 
+     {chats.map(({id, data: {chatName}}) => (
+        <CustomListItem key={id} id={id} chatName={chatName}/>
+     ))}
+     </SafeAreaView>
     );
 }
 
