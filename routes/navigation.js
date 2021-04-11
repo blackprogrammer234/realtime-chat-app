@@ -8,6 +8,7 @@ import AddChat from "../screens/AddChat/AddChatScreen.js"
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Icon, Button, Header} from "react-native-elements";
 import AddChatScreen from '../screens/AddChat/AddChatScreen.js';
+import ChatScreen from '../screens/Chat/ChatScreen.js'
 
 const navigationStack = createStackNavigator();
 
@@ -26,6 +27,7 @@ function navigation() {
                     <navigationStack.Screen name="Register" component={Register} />
                     <navigationStack.Screen name="Home" component={Home}/>
                     <navigationStack.Screen name="AddChat" component={AddChatScreen}/>
+                    <navigationStack.Screen name="Chat" component={ChatScreen}/>
                 </navigationStack.Navigator>
             </NavigationContainer>
     );

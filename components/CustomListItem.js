@@ -10,7 +10,7 @@ const CustomListItem = ({id, chatName, enterChat}) => {
             <KeyboardAwareScrollView 
                 resetScrollToCoords={{ x: 0, y: 0 }}
                 scrollEnabled={false}>
-            <ListItem key={id} bottomDivider>
+            <ListItem key={id} onPress={() => enterChat(id,chatName)} bottomDivider>
                 <Avatar
                      size="small"
                      rounded
