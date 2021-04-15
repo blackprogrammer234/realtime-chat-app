@@ -22,7 +22,37 @@ const styles = StyleSheet.create({
         padding: 10,
         color: "grey",
         borderRadius: 30
-    }
+    },
+    receiver: {
+        marginRight: 15,
+        marginBottom: 20,
+        backgroundColor: "#ECECEC",
+        borderWidth: 1, 
+        padding: 15,
+        alignSelf: "flex-end",
+        maxWidth:"80%",
+        borderRadius: 20,
+        position: "relative"
+    },
+    sender: {
+        marginLeft: 15,
+        marginBottom: 20,
+        backgroundColor: "#2B68E6",
+        padding: 15,
+        alignSelf: "flex-start",
+        maxWidth:"80%",
+        margin: 15,
+        borderRadius: 20,
+        position: "relative"
+    },
+
+    receiverText : {
+
+    },
+    senderText : {
+
+}
+
 });
 
 export default styles;
