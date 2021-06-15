@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginBottom: 20,
         backgroundColor: "#ECECEC",
-        borderWidth: 1, 
         padding: 15,
         alignSelf: "flex-end",
         maxWidth:"80%",
@@ -35,8 +34,6 @@ const styles = StyleSheet.create({
         position: "relative"
     },
     sender: {
-        marginLeft: 15,
-        marginBottom: 20,
         backgroundColor: "#2B68E6",
         padding: 15,
         alignSelf: "flex-start",
@@ -45,12 +42,21 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         position: "relative"
     },
-
+    senderName: {
+        left: 10,
+        paddingRight: 10,
+        fontSize: 10,
+        color:"white"
+    },
     receiverText : {
-
+        color: "black",
+        fontWeight: "500",
+        marginLeft: 10,
     },
     senderText : {
-
+        color: "white",
+        fontWeight: "500",
+        marginLeft: 10,
 }
 
 });

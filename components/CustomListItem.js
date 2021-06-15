@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native"
 import { Text , ListItem , Avatar } from "react-native-elements";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import  { signout } from "../firebase.config";
+import { db , auth, signout } from "../firebase.config";
 
 const CustomListItem = ({id, chatName, enterChat}) => {
+    const [chatMessages, setChatMessages] = useState([]);
+    useEffect(() => {
+        const unsubscribe = db.collection('chat').doc(id).collection('message').
+            orderBy('timestamp','desc').onSnapshot(snapshot => (
+                setChatMessages(snapshot.docs.map(doc => doc.data()))
+            ));
+        return unsubscribe;
+    })
     return(
         <SafeAreaView>
             <KeyboardAwareScrollView 
@@ -23,8 +31,7 @@ const CustomListItem = ({id, chatName, enterChat}) => {
                    {chatName} 
                 </ListItem.Title>
                 <ListItem.Subtitle numberOfLines = {1} ellipsizeMode= "tail">
-                    This is to test the Subtitle. This is to test the subtile. 
-                    This is to test the subtile. This is to test the subtile.
+                    {chatMessages?.[0]?.displayName}: {chatMessages?.[0]?.message}
                 </ListItem.Subtitle>
             </ListItem.Content>
             </ListItem>

@@ -88,17 +88,34 @@ const ChatScreen = ({navigation , route}) => {
                 keyboardVerticalOffset={90}>
                     <TouchableWithoutFeedback onPress= {Keyboard.dismiss}>
                     <>
-                    <ScrollView>
+                    <ScrollView contentContainerStyle= {{padding: 15}}>
                         {
                             messages.map(({id,data}) => (
                                 data.email === auth.currentUser.email ? (
                                     <View key={id} style={styles.receiver}>
+                                        <Avatar
+                                            position="absolute"
+                                            rounded
+                                            bottom={-15}
+                                            right={-5}
+                                            size={30}
+                                            source= {require("../../assets/images/avater_icon.png")}
+                                        />
                                         <Text style={styles.receiverText}>{data.message}</Text>
                                     </View>
                                 ):
                                 (
                                     <View key={id} style={styles.sender}>
+                                         <Avatar
+                                            position="absolute"
+                                            rounded
+                                            bottom={-15}
+                                            left={-5}
+                                            size={30}
+                                            source= {require("../../assets/images/avater_icon.png")}
+                                        />
                                         <Text style={styles.senderText}>{data.message}</Text>
+                                        <Text style={styles.senderName}>{data.displayName}</Text>
                                     </View>
                                 )
                             ))
