@@ -30,7 +30,9 @@ const ChatScreen = ({navigation , route}) => {
                 <Avatar
                      size="small"
                      rounded
-                     source= {require("../../assets/images/avater_icon.png")}
+                     source= {{
+                         uri: messages[0]?.data.photoURL
+                     }}
                      icon={{name: 'user', type: 'font-awesome'}}
                      />
                 <Text style={{color: "white", marginLeft: 10, fontWeight: "700"}}>{route.params.chatName}</Text>
