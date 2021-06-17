@@ -3,7 +3,7 @@ import { SafeAreaView, View, TouchableOpacity} from "react-native"
 import { Text , ListItem , Avatar } from "react-native-elements";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import CustomListItem from "../../components/CustomListItem.js";
-import  { db, signout } from "../../firebase.config";
+import  { auth, db, signout } from "../../firebase.config";
 import { AntDesign, SimpleLineIcons} from "@expo/vector-icons"
 import { HeaderTitle } from '@react-navigation/stack';
 import { Icon , Button } from "react-native-elements";
@@ -25,7 +25,12 @@ const HomeScreen = ({navigation}) => {
     useLayoutEffect(()=>{
         navigation.setOptions({
             title: "Realtime-chat-app",
-            headerTitleAlign: "left",
+            headerTitleAlign: "center",
+            headerLeft: () => (
+                <View style={{ marginLeft: 20}}>
+                    <Avatar rounded source={{uri: auth?.currentUser?.photoURL}}/>
+                </View>
+            ),
             headerRight: () => (
                 <View style= {{
                     flexDirection: "row",

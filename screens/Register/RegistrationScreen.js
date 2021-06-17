@@ -12,6 +12,7 @@ const RegistrationScreen =  ({ navigation })  => {
     const [email, setEmail] = useState('');
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -83,7 +84,21 @@ const RegistrationScreen =  ({ navigation })  => {
                         (text) => setPassword(text)
                     }
                 />
-                <Button onPress= { () => {registration(fullName, email, userName, password)}}  title="Register" />
+                 <Input placeholder="Profile Picture URL (optional)"
+                    keyboardType="default"
+                    leftIcon={
+                        <Icon
+                            name="account-box"
+                            type="material"
+                            color='#517fa4'
+                        />
+                    }
+                    value={imageUrl}
+                    onChangeText={
+                        (text) => setImageUrl(text)
+                    }
+                />
+                <Button onPress= { () => {registration(fullName, email, userName, password, imageUrl)}}  title="Register" />
             </View>
         </KeyboardAwareScrollView>
     )

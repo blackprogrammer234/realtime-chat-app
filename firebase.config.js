@@ -28,12 +28,13 @@ const firebaseConfig = {
 
   export { auth, db};
 
-  export async function registration(fullName, email, userName, password){
+  export async function registration(fullName, email, userName, password, imageUrl){
     try{
       await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((res) => {
           res.user.updateProfile({
-            displayName : userName
+            displayName : userName,
+            photoURL : imageUrl || require("../realtime-chat-app/assets/images/avater_icon.png")
           })
         })
       

@@ -60,7 +60,8 @@ const ChatScreen = ({navigation , route}) => {
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             message: input,
             displayName: auth.currentUser.displayName,
-            email: auth.currentUser.email
+            email: auth.currentUser.email,
+            photoURL: auth.currentUser.photoURL
         });
         setInput("")
     }
@@ -99,7 +100,9 @@ const ChatScreen = ({navigation , route}) => {
                                             bottom={-15}
                                             right={-5}
                                             size={30}
-                                            source= {require("../../assets/images/avater_icon.png")}
+                                            source= {{
+                                                uri: data.photoURL
+                                            }}
                                         />
                                         <Text style={styles.receiverText}>{data.message}</Text>
                                     </View>
@@ -112,7 +115,9 @@ const ChatScreen = ({navigation , route}) => {
                                             bottom={-15}
                                             left={-5}
                                             size={30}
-                                            source= {require("../../assets/images/avater_icon.png")}
+                                            source= {{
+                                                uri: data.photoURL
+                                            }}
                                         />
                                         <Text style={styles.senderText}>{data.message}</Text>
                                         <Text style={styles.senderName}>{data.displayName}</Text>
