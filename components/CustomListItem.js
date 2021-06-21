@@ -23,7 +23,7 @@ const CustomListItem = ({id, chatName, enterChat}) => {
                      size="small"
                      rounded
                      source= {{
-                         uri: chatMessages?.[0]?.photoURL || require("../assets/images/avater_icon.png")
+                         uri: chatMessages?.[0]?.photoURL || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
                      }}
                      icon={{name: 'user', type: 'font-awesome'}}
                      onPress={() => {signout("Login")}}
