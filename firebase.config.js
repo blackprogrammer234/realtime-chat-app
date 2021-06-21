@@ -56,7 +56,7 @@ const firebaseConfig = {
   export async function signout(String){
       console.log(String);
       try{
-       await firebase.auth().signOut();
+       return await firebase.auth().signOut();
       }catch(err){
         Alert.alert("There is something wrong!!!!", err.message);
       }

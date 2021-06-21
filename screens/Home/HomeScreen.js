@@ -9,8 +9,13 @@ import { HeaderTitle } from '@react-navigation/stack';
 import { Icon , Button } from "react-native-elements";
 import Styles from "./HomeScreen_styles.js"
 
+
 const HomeScreen = ({navigation}) => {
     const [chats, setChats] = useState([]);
+    const signOutUser = () => {
+        signout();
+        navigation.replace("Login")
+    };
 
     useEffect(() => {
         const unsubscribe = db.collection("chat").onSnapshot(snapshot => (
@@ -28,7 +33,9 @@ const HomeScreen = ({navigation}) => {
             headerTitleAlign: "center",
             headerLeft: () => (
                 <View style={{ marginLeft: 20}}>
+                    <TouchableOpacity onPress={signOutUser} activeOpacity={0.5}>
                     <Avatar rounded source={{uri: auth?.currentUser?.photoURL}}/>
+                    </TouchableOpacity>
                 </View>
             ),
             headerRight: () => (

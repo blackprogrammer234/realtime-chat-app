@@ -5,6 +5,7 @@ import {Input , Button} from 'react-native-elements';
 import styles from "./LoginScreen_styles";
 import  { auth, authentication } from "../../firebase.config";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import navigation from "../../routes/navigation.js";
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
