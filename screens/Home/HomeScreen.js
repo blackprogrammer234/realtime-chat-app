@@ -34,7 +34,7 @@ const HomeScreen = ({navigation}) => {
             headerLeft: () => (
                 <View style={{ marginLeft: 20}}>
                     <TouchableOpacity onPress={signOutUser} activeOpacity={0.5}>
-                    <Avatar rounded source={{uri: auth?.currentUser?.photoURL}}/>
+                    <Avatar rounded source={{uri: auth?.currentUser?.photoURL || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"}}/>
                     </TouchableOpacity>
                 </View>
             ),
@@ -43,7 +43,8 @@ const HomeScreen = ({navigation}) => {
                     flexDirection: "row",
                     justifyContent: "space-between",
                     width: 80,
-                    marginRight: 20
+                    marginRight: 10,
+                    marginLeft: 15
                 }}>
                     <TouchableOpacity activeOpacity={0.5}>
                         <AntDesign name="camerao" size={24} color="white"/>

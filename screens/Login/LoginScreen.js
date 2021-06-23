@@ -50,7 +50,9 @@ const LoginScreen = ({ navigation }) => {
               (text) => setPassword(text)
             }
           />
-          <Button onPress = {() => {authentication(email,password)}} title="Login" />
+          <View style={{ marginBottom: 10 }}>
+            <Button onPress = {() => {authentication(email,password)}} title="Login" />
+          </View>
           <Button onPress = {() => navigation.navigate('Register')}  type="outline" title="Sign Up" />
         </View>
       </KeyboardAwareScrollView>

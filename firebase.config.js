@@ -34,7 +34,7 @@ const firebaseConfig = {
         .then((res) => {
           res.user.updateProfile({
             displayName : userName,
-            photoURL : imageUrl || require("../realtime-chat-app/assets/images/avater_icon.png")
+            photoURL : imageUrl || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
           })
         })
       
