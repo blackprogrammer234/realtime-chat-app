@@ -31,7 +31,7 @@ const ChatScreen = ({navigation , route}) => {
                      size="small"
                      rounded
                      source= {{
-                         uri: messages[0]?.data.photoURL
+                         uri: messages[messages.length-1]?.data.photoURL
                      }}
                      icon={{name: 'user', type: 'font-awesome'}}
                      />
