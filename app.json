@@ -4,7 +4,7 @@
     "slug": "realtime-chat-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/realtime_chat_icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -28,6 +28,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "Social media app similiar to whatsapp. Users are able to create chat room so that they can instant message other people that are using the app including family and friends."
   }
 }
