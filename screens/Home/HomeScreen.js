@@ -44,7 +44,7 @@ const HomeScreen = ({navigation}) => {
                     justifyContent: "space-between",
                     width: 80,
                     marginRight: 10,
-                    marginLeft: 15
+                    marginLeft: 20
                 }}>
                     <TouchableOpacity activeOpacity={0.5}>
                         <AntDesign name="camerao" size={24} color="white"/>

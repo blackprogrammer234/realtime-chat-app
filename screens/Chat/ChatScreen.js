@@ -42,7 +42,7 @@ const ChatScreen = ({navigation , route}) => {
                 <View style={{
                     flexDirection: "row",
                     justifyContent: "space-between",
-                    width: 60,
+                    width: 80,
                     marginRight: 20
                 }}>
                 <TouchableOpacity activeOpacity={0.5}>
