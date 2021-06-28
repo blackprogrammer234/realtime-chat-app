@@ -46,7 +46,20 @@ Here's the following frameworks I used to build this project
 
 ### Prerequisites
 
+You need to install node.js if you don't already have it on your local machine. 
+
+Open an empty ternimal and run the following command 
+
+* npm
+  ```sh
+  npm install npm@latest -g
+
 ### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
 
 
 
